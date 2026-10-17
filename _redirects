@@ -1,0 +1,3 @@
+# /post/{id} -> landing page (URL preserved so universal links still see the real path)
+/post/*      /post.html      200
+/addfriend   /addfriend.html 200

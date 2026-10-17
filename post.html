@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>View this post on TasteCircle</title>
+<meta name="robots" content="noindex">
+<meta name="apple-itunes-app" content="app-id=6755754524">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/site.css">
+<script>
+(function () {
+  var appStore = 'https://apps.apple.com/us/app/tastecircle/id6755754524';
+  var parts = location.pathname.split('/').filter(Boolean);
+  var postId = parts.length >= 2 && parts[0] === 'post' ? parts[1] : null;
+  if (postId) location.href = 'tastecircle://post/' + encodeURIComponent(postId);
+  setTimeout(function () { location.replace(appStore); }, 1200);
+})();
+</script>
+</head>
+<body class="handoff">
+<main class="handoff-card">
+  <img class="mark-xl" src="assets/img/mark-navy.png" width="84" height="72" alt="">
+  <h1>View this plate on TasteCircle</h1>
+  <p>Opening the app. If nothing happens, tap below to get TasteCircle.</p>
+  <a class="badge" href="https://apps.apple.com/us/app/tastecircle/id6755754524"><img src="assets/img/appstore-badge.svg" alt="Download on the App Store" width="165" height="55"></a>
+  <p class="fine">Already have TasteCircle? Open this link on your iPhone and it will open in the app.</p>
+</main>
+</body>
+</html>
