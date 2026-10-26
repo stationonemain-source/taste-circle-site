@@ -49,6 +49,8 @@ textarea,input[type=text]{width:100%;font:400 16px/1.5 Poppins,sans-serif;color:
 textarea{min-height:104px;resize:vertical}
 textarea:focus,input:focus{outline:2px solid var(--peri);outline-offset:1px;border-color:var(--navy)}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
+.grp+.grp{margin-top:18px}
+.grp-h{display:block;font:500 14.5px/1.3 Poppins,sans-serif;color:var(--ink-2);margin:0 0 8px}
 .chip{position:relative}
 .chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
 .chip span{display:inline-block;padding:9px 14px;border:1px solid #d9ccb7;border-radius:999px;background:var(--field);font-size:14.5px;line-height:1.3;cursor:pointer;user-select:none}
@@ -102,15 +104,60 @@ footer a{color:var(--ink-2)}
 
     <fieldset>
       <legend>Which of these would you actually use? <span class="opt">(optional)</span></legend>
-      <span class="hint">Tap any. These are ideas, not things the app does yet.</span>
-      <div class="chips">
-        <label class="chip"><input type="checkbox" name="ideas" value="Map of where my friends ate"><span>Map of where my friends ate</span></label>
-        <label class="chip"><input type="checkbox" name="ideas" value="Lists I can share (date spots, cheap eats)"><span>Lists I can share (date spots, cheap eats)</span></label>
-        <label class="chip"><input type="checkbox" name="ideas" value="Picking where to eat as a group"><span>Picking where to eat as a group</span></label>
-        <label class="chip"><input type="checkbox" name="ideas" value="Deals from local spots"><span>Deals from local spots</span></label>
-        <label class="chip"><input type="checkbox" name="ideas" value="Search by dish"><span>Search by dish</span></label>
-        <label class="chip"><input type="checkbox" name="ideas" value="Streaks and badges"><span>Streaks and badges</span></label>
-        <label class="chip"><input type="checkbox" name="ideas" value="Android version"><span>Android version</span></label>
+      <span class="hint">Tap as many as you like. These are ideas, not things the app does yet.</span>
+      <div class="grp">
+        <span class="grp-h">Make it yours</span>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" name="ideas" value="Profile themes and colors"><span>Profile themes and colors</span></label>
+          <label class="chip"><input type="checkbox" name="ideas" value="Pick your own app icon"><span>Pick your own app icon</span></label>
+          <label class="chip"><input type="checkbox" name="ideas" value="Pin your top 3 dishes on your profile"><span>Pin your top 3 dishes on your profile</span></label>
+          <label class="chip"><input type="checkbox" name="ideas" value="A song on your profile"><span>A song on your profile</span></label>
+          <label class="chip"><input type="checkbox" name="ideas" value="Stickers, frames and fonts on plate photos"><span>Stickers, frames and fonts on plate photos</span></label>
+          <label class="chip"><input type="checkbox" name="ideas" value="Choose what your feed shows"><span>Choose what your feed shows</span></label>
+          <label class="chip"><input type="checkbox" name="ideas" value="A home screen widget of friends&#x27; plates"><span>A home screen widget of friends&#x27; plates</span></label>
+          <label class="chip"><input type="checkbox" name="ideas" value="A food personality quiz with a card to share"><span>A food personality quiz with a card to share</span></label>
+        </div>
+      </div>
+      <div class="grp">
+        <span class="grp-h">With friends</span>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" name="ideas" value="Taste match % with each friend"><span>Taste match % with each friend</span></label>
+          <label class="chip"><input type="checkbox" name="ideas" value="See what friends ordered somewhere before you go"><span>See what friends ordered somewhere before you go</span></label>
+          <label class="chip"><input type="checkbox" name="ideas" value="Vote with friends on where to eat tonight"><span>Vote with friends on where to eat tonight</span></label>
+          <label class="chip"><input type="checkbox" name="ideas" value="Split the bill after"><span>Split the bill after</span></label>
+          <label class="chip"><input type="checkbox" name="ideas" value="Map of where my friends ate"><span>Map of where my friends ate</span></label>
+          <label class="chip"><input type="checkbox" name="ideas" value="Lists I can share (date spots, cheap eats)"><span>Lists I can share (date spots, cheap eats)</span></label>
+          <label class="chip"><input type="checkbox" name="ideas" value="Reactions besides a like"><span>Reactions besides a like</span></label>
+        </div>
+      </div>
+      <div class="grp">
+        <span class="grp-h">Finding food</span>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" name="ideas" value="What&#x27;s open late right now"><span>What&#x27;s open late right now</span></label>
+          <label class="chip"><input type="checkbox" name="ideas" value="Meals under $10"><span>Meals under $10</span></label>
+          <label class="chip"><input type="checkbox" name="ideas" value="Dietary filters (vegan, halal, gluten-free)"><span>Dietary filters (vegan, halal, gluten-free)</span></label>
+          <label class="chip"><input type="checkbox" name="ideas" value="Spin a wheel to pick dinner"><span>Spin a wheel to pick dinner</span></label>
+          <label class="chip"><input type="checkbox" name="ideas" value="Hidden gems: few posts, great ratings"><span>Hidden gems: few posts, great ratings</span></label>
+          <label class="chip"><input type="checkbox" name="ideas" value="Secret menu items people found"><span>Secret menu items people found</span></label>
+          <label class="chip"><input type="checkbox" name="ideas" value="The best dish at each spot, voted by friends"><span>The best dish at each spot, voted by friends</span></label>
+        </div>
+      </div>
+      <div class="grp">
+        <span class="grp-h">Just for fun</span>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" name="ideas" value="Food Wrapped: your year in plates"><span>Food Wrapped: your year in plates</span></label>
+          <label class="chip"><input type="checkbox" name="ideas" value="A food bucket list to check off"><span>A food bucket list to check off</span></label>
+          <label class="chip"><input type="checkbox" name="ideas" value="A passport stamp for every cuisine you try"><span>A passport stamp for every cuisine you try</span></label>
+          <label class="chip"><input type="checkbox" name="ideas" value="Short video plates"><span>Short video plates</span></label>
+          <label class="chip"><input type="checkbox" name="ideas" value="Campus vs campus food battles"><span>Campus vs campus food battles</span></label>
+          <label class="chip"><input type="checkbox" name="ideas" value="Blind taste tests with friends, in person"><span>Blind taste tests with friends, in person</span></label>
+        </div>
+      </div>
+      <div class="grp">
+        <span class="grp-h">Also</span>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" name="ideas" value="Android version"><span>Android version</span></label>
+        </div>
       </div>
     </fieldset>
 
