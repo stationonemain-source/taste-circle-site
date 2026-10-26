@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Make TasteCircle better</title>
+<meta name="description" content="Five quick questions. Tell us what you'd add to TasteCircle and what bugs you. Honest beats nice.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F7EFE3">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TasteCircle">
+<meta property="og:title" content="What would you add to TasteCircle?">
+<meta property="og:description" content="Five quick questions, about two minutes. Honest beats nice.">
+<meta property="og:image" content="https://stationonemain-source.github.io/taste-circle-site/assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../assets/img/favicon.png">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="preload" href="../assets/fonts/fredoka.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:Fredoka;src:url(../assets/fonts/fredoka.woff2) format("woff2");font-weight:300 700;font-display:swap}
+@font-face{font-family:Poppins;src:url(../assets/fonts/poppins-400.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Poppins;src:url(../assets/fonts/poppins-500.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:Poppins;src:url(../assets/fonts/poppins-600.woff2) format("woff2");font-weight:600;font-display:swap}
+:root{
+  --cream:#F7EFE3;--cream-2:#EFE4D2;--navy:#121c33;--navy-2:#1a2745;--peri:#9DB6FF;
+  --ink-2:#4a5068;--ink-3:rgba(18,28,51,.62);--field:#fffaf3;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--navy);font:400 16px/1.55 Poppins,sans-serif}
+.wrap{max-width:640px;margin:0 auto;padding:0 16px}
+.hdr{border-bottom:1px solid var(--cream-2);height:60px;display:flex;align-items:center}
+.hdr .wrap{width:100%}
+.brand{display:inline-flex;align-items:center;gap:10px;color:var(--navy);text-decoration:none;font:500 18px/1 Fredoka,sans-serif;font-stretch:94%}
+.brand img{width:28px;height:auto}
+h1{font:600 36px/1.08 Fredoka,sans-serif;font-stretch:94%;letter-spacing:-.02em;margin:40px 0 12px}
+.lede{color:var(--ink-2);font-size:18px;margin:0 0 8px}
+.small{color:var(--ink-3);font-size:14.5px;margin:0}
+form{margin:32px 0 0}
+fieldset{border:0;margin:0;padding:24px 0;border-top:1px solid var(--cream-2)}
+legend,label.q{display:block;font:600 18px/1.3 Fredoka,sans-serif;font-stretch:94%;padding:0;margin:0 0 4px}
+.hint{display:block;color:var(--ink-3);font-size:14.5px;margin:0 0 12px}
+.opt{color:var(--ink-3);font:400 14.5px Poppins,sans-serif}
+textarea,input[type=text]{width:100%;font:400 16px/1.5 Poppins,sans-serif;color:var(--navy);background:var(--field);border:1px solid #d9ccb7;border-radius:14px;padding:12px 14px}
+textarea{min-height:104px;resize:vertical}
+textarea:focus,input:focus{outline:2px solid var(--peri);outline-offset:1px;border-color:var(--navy)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.chip span{display:inline-block;padding:9px 14px;border:1px solid #d9ccb7;border-radius:999px;background:var(--field);font-size:14.5px;line-height:1.3;cursor:pointer;user-select:none}
+.chip input:checked+span{background:var(--navy);border-color:var(--navy);color:var(--cream)}
+.chip input:focus-visible+span{outline:2px solid var(--peri);outline-offset:2px}
+.send{border-top:1px solid var(--cream-2);padding:24px 0 8px}
+.btns{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.btn{appearance:none;display:block;width:100%;text-align:center;font:600 16px/1 Poppins,sans-serif;padding:16px 20px;border-radius:999px;border:1px solid var(--navy);cursor:pointer;text-decoration:none}
+.btn.primary{background:var(--navy);color:var(--cream)}
+.btn.ghost{background:transparent;color:var(--navy)}
+.btn:focus-visible{outline:2px solid var(--peri);outline-offset:2px}
+.err{color:#9b2c2c;font-size:14.5px;margin:8px 0 0;min-height:1.4em}
+.done{display:none;background:var(--navy);color:var(--cream);border-radius:14px;padding:20px;margin:16px 0 0}
+.done h2{font:600 22px/1.2 Fredoka,sans-serif;font-stretch:94%;margin:0 0 6px}
+.done p{margin:0;color:rgba(247,239,227,.82);font-size:14.5px}
+.done.show{display:block}
+footer{color:var(--ink-3);font-size:13px;padding:32px 0 48px}
+footer a{color:var(--ink-2)}
+@media (min-width:641px){h1{font-size:48px;margin-top:56px}.btns{flex-direction:row}.btn{width:auto;flex:1}}
+</style>
+</head>
+<body>
+<header class="hdr"><div class="wrap"><a class="brand" href="../"><img src="../assets/img/mark-navy.png" width="327" height="278" alt="">TasteCircle</a></div></header>
+
+<main class="wrap">
+  <h1>What would you add to TasteCircle?</h1>
+  <p class="lede">You've seen it or used it. Tell us what's missing and what bugs you. Honest beats nice, so don't be polite.</p>
+  <p class="small">Five questions, about two minutes. Your answers come straight to us.</p>
+
+  <form id="f" novalidate>
+    <fieldset>
+      <legend>Have you used it?</legend>
+      <span class="hint">Pick one.</span>
+      <div class="chips" role="radiogroup">
+        <label class="chip"><input type="radio" name="used" value="I use it a lot"><span>I use it a lot</span></label>
+        <label class="chip"><input type="radio" name="used" value="A few times"><span>A few times</span></label>
+        <label class="chip"><input type="radio" name="used" value="Downloaded it, barely opened it"><span>Downloaded it, barely opened it</span></label>
+        <label class="chip"><input type="radio" name="used" value="Never tried it"><span>Never tried it</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <label class="q" for="add">If you could add one thing, what would it be?</label>
+      <span class="hint">A feature, a game, a button, anything. The weirder the better.</span>
+      <textarea id="add" name="add" required></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>Which of these would you actually use? <span class="opt">(optional)</span></legend>
+      <span class="hint">Tap any. These are ideas, not things the app does yet.</span>
+      <div class="chips">
+        <label class="chip"><input type="checkbox" name="ideas" value="Map of where my friends ate"><span>Map of where my friends ate</span></label>
+        <label class="chip"><input type="checkbox" name="ideas" value="Lists I can share (date spots, cheap eats)"><span>Lists I can share (date spots, cheap eats)</span></label>
+        <label class="chip"><input type="checkbox" name="ideas" value="Picking where to eat as a group"><span>Picking where to eat as a group</span></label>
+        <label class="chip"><input type="checkbox" name="ideas" value="Deals from local spots"><span>Deals from local spots</span></label>
+        <label class="chip"><input type="checkbox" name="ideas" value="Search by dish"><span>Search by dish</span></label>
+        <label class="chip"><input type="checkbox" name="ideas" value="Streaks and badges"><span>Streaks and badges</span></label>
+        <label class="chip"><input type="checkbox" name="ideas" value="Android version"><span>Android version</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <label class="q" for="bad">What's annoying, confusing or just bad right now? <span class="opt">(optional)</span></label>
+      <span class="hint">Something that made you close the app, or a reason you never opened it.</span>
+      <textarea id="bad" name="bad"></textarea>
+    </fieldset>
+
+    <fieldset>
+      <label class="q" for="more">What would get you posting every time you eat out? <span class="opt">(optional)</span></label>
+      <textarea id="more" name="more"></textarea>
+    </fieldset>
+
+    <fieldset>
+      <label class="q" for="name">Your name <span class="opt">(optional)</span></label>
+      <span class="hint">Leave it blank if you'd rather be anonymous.</span>
+      <input type="text" id="name" name="name" autocomplete="given-name">
+    </fieldset>
+
+    <div class="send">
+      <label class="q">Send it</label>
+      <span class="hint">Email goes to our TasteCircle inbox. Text opens your messages so you can send it to whoever sent you this link.</span>
+      <div class="btns">
+        <button class="btn primary" type="button" data-send="email">Send by email</button>
+        <button class="btn ghost" type="button" data-send="text">Send as a text</button>
+        <button class="btn ghost" type="button" data-send="copy">Copy my answers</button>
+      </div>
+      <p class="err" id="err" role="alert"></p>
+      <div class="done" id="done" role="status">
+        <h2>Thank you.</h2>
+        <p id="doneMsg">Your email app should be open with your answers in it. Hit send there and it reaches us.</p>
+      </div>
+    </div>
+  </form>
+</main>
+
+<footer><div class="wrap">TasteCircle, made in Norman, Oklahoma. <a href="https://apps.apple.com/us/app/tastecircle/id6755754524">Get the app</a></div></footer>
+
+<script>
+(function(){
+  var TO = "tastecirclemain@gmail.com";
+  var f = document.getElementById("f");
+  var err = document.getElementById("err");
+  var done = document.getElementById("done");
+  var doneMsg = document.getElementById("doneMsg");
+
+  function val(id){ return document.getElementById(id).value.trim(); }
+
+  function compose(){
+    var used = (f.querySelector('input[name=used]:checked') || {}).value || "";
+    var ideas = Array.prototype.map.call(f.querySelectorAll('input[name=ideas]:checked'), function(i){ return i.value; });
+    var lines = ["TasteCircle feedback", ""];
+    if (val("name")) lines.push("From: " + val("name"));
+    if (used) lines.push("Used it: " + used);
+    lines.push("", "One thing I'd add:", val("add"));
+    if (ideas.length) lines.push("", "I'd use: " + ideas.join("; "));
+    if (val("bad")) lines.push("", "What's bad right now:", val("bad"));
+    if (val("more")) lines.push("", "What would get me posting:", val("more"));
+    return lines.join("\n");
+  }
+
+  function show(msg){ doneMsg.textContent = msg; done.classList.add("show"); done.scrollIntoView({behavior:"smooth", block:"nearest"}); }
+
+  f.addEventListener("click", function(e){
+    var b = e.target.closest("[data-send]");
+    if (!b) return;
+    err.textContent = "";
+    if (!val("add")) {
+      err.textContent = "Fill in the one thing you'd add first. That's the question we care about most.";
+      document.getElementById("add").focus();
+      return;
+    }
+    var body = compose();
+    var how = b.getAttribute("data-send");
+    if (how === "email") {
+      var subj = "TasteCircle feedback" + (val("name") ? " from " + val("name") : "");
+      location.href = "mailto:" + TO + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(body);
+      show("Your email app should be open with your answers in it. Hit send there and it reaches us.");
+    } else if (how === "text") {
+      location.href = "sms:?&body=" + encodeURIComponent(body);
+      show("Your messages app should be open with your answers in it. Pick who sent you this link and hit send.");
+    } else {
+      var ok = function(){ show("Copied. Paste it into a text or a DM to whoever sent you this link."); };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(body).then(ok, function(){ err.textContent = "Couldn't copy here. Try Send by email instead."; });
+      } else {
+        var t = document.createElement("textarea"); t.value = body; document.body.appendChild(t); t.select();
+        try { document.execCommand("copy"); ok(); } catch (x) { err.textContent = "Couldn't copy here. Try Send by email instead."; }
+        t.remove();
+      }
+    }
+  });
+})();
+</script>
+</body>
+</html>
