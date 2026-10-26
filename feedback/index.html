@@ -111,7 +111,6 @@ footer a{color:var(--ink-2)}
           <label class="chip"><input type="checkbox" name="ideas" value="Profile themes and colors"><span>Profile themes and colors</span></label>
           <label class="chip"><input type="checkbox" name="ideas" value="Pick your own app icon"><span>Pick your own app icon</span></label>
           <label class="chip"><input type="checkbox" name="ideas" value="Pin your top 3 dishes on your profile"><span>Pin your top 3 dishes on your profile</span></label>
-          <label class="chip"><input type="checkbox" name="ideas" value="A song on your profile"><span>A song on your profile</span></label>
           <label class="chip"><input type="checkbox" name="ideas" value="Stickers, frames and fonts on plate photos"><span>Stickers, frames and fonts on plate photos</span></label>
           <label class="chip"><input type="checkbox" name="ideas" value="Choose what your feed shows"><span>Choose what your feed shows</span></label>
           <label class="chip"><input type="checkbox" name="ideas" value="A home screen widget of friends&#x27; plates"><span>A home screen widget of friends&#x27; plates</span></label>
@@ -124,7 +123,6 @@ footer a{color:var(--ink-2)}
           <label class="chip"><input type="checkbox" name="ideas" value="Taste match % with each friend"><span>Taste match % with each friend</span></label>
           <label class="chip"><input type="checkbox" name="ideas" value="See what friends ordered somewhere before you go"><span>See what friends ordered somewhere before you go</span></label>
           <label class="chip"><input type="checkbox" name="ideas" value="Vote with friends on where to eat tonight"><span>Vote with friends on where to eat tonight</span></label>
-          <label class="chip"><input type="checkbox" name="ideas" value="Split the bill after"><span>Split the bill after</span></label>
           <label class="chip"><input type="checkbox" name="ideas" value="Map of where my friends ate"><span>Map of where my friends ate</span></label>
           <label class="chip"><input type="checkbox" name="ideas" value="Lists I can share (date spots, cheap eats)"><span>Lists I can share (date spots, cheap eats)</span></label>
           <label class="chip"><input type="checkbox" name="ideas" value="Reactions besides a like"><span>Reactions besides a like</span></label>
@@ -140,23 +138,6 @@ footer a{color:var(--ink-2)}
           <label class="chip"><input type="checkbox" name="ideas" value="Hidden gems: few posts, great ratings"><span>Hidden gems: few posts, great ratings</span></label>
           <label class="chip"><input type="checkbox" name="ideas" value="Secret menu items people found"><span>Secret menu items people found</span></label>
           <label class="chip"><input type="checkbox" name="ideas" value="The best dish at each spot, voted by friends"><span>The best dish at each spot, voted by friends</span></label>
-        </div>
-      </div>
-      <div class="grp">
-        <span class="grp-h">Just for fun</span>
-        <div class="chips">
-          <label class="chip"><input type="checkbox" name="ideas" value="Food Wrapped: your year in plates"><span>Food Wrapped: your year in plates</span></label>
-          <label class="chip"><input type="checkbox" name="ideas" value="A food bucket list to check off"><span>A food bucket list to check off</span></label>
-          <label class="chip"><input type="checkbox" name="ideas" value="A passport stamp for every cuisine you try"><span>A passport stamp for every cuisine you try</span></label>
-          <label class="chip"><input type="checkbox" name="ideas" value="Short video plates"><span>Short video plates</span></label>
-          <label class="chip"><input type="checkbox" name="ideas" value="Campus vs campus food battles"><span>Campus vs campus food battles</span></label>
-          <label class="chip"><input type="checkbox" name="ideas" value="Blind taste tests with friends, in person"><span>Blind taste tests with friends, in person</span></label>
-        </div>
-      </div>
-      <div class="grp">
-        <span class="grp-h">Also</span>
-        <div class="chips">
-          <label class="chip"><input type="checkbox" name="ideas" value="Android version"><span>Android version</span></label>
         </div>
       </div>
     </fieldset>
@@ -255,8 +236,14 @@ footer a{color:var(--ink-2)}
         err.textContent = msg || "That didn't go through. Try again, or send your answers another way below.";
         fallback.hidden = false;
       };
-      fetch(HOOK, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
-        .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ return { status: r.status, j: j }; }); })
+      var post = function(){
+        return fetch(HOOK, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
+          .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ return { status: r.status, j: j }; }); });
+      };
+      var wait = function(ms){ return new Promise(function(res){ setTimeout(res, ms); }); };
+      /* one quiet retry: a server restarting for a few seconds should not cost someone their answers */
+      var once = function(){ return post().then(function(x){ return (x.status >= 500) ? wait(2500).then(post) : x; }, function(){ return wait(2500).then(post); }); };
+      once()
         .then(function(x){
           if (x.status === 200 && x.j && x.j.ok) {
             sendBtn.textContent = "Sent";
@@ -265,9 +252,9 @@ footer a{color:var(--ink-2)}
           } else if (x.status === 429) {
             fail("Too many answers in a short time. Try again later, or send them another way below.");
           } else {
-            fail();
+            fail("That didn't go through (error " + x.status + "). Try again, or send your answers another way below.");
           }
-        }, function(){ fail(); });
+        }, function(){ fail("Couldn't reach us from this connection. Try again, or send your answers another way below."); });
       return;
     }
     if (how === "email") {
