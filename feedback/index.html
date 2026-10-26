@@ -252,6 +252,8 @@ footer a{color:var(--ink-2)}
             show(x.j.duplicate ? "We already have these answers. Thanks again." : "Got it. Your answers are with us.");
           } else if (x.status === 429) {
             fail("Too many answers in a short time. Try again later, or send them another way below.");
+          } else if (x.status === 400 && x.j && x.j.error) {
+            fail(String(x.j.error));
           } else {
             fail("That didn't go through (error " + x.status + "). Try again, or send your answers another way below.");
           }
