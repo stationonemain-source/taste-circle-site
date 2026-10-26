@@ -55,6 +55,10 @@ textarea:focus,input:focus{outline:2px solid var(--peri);outline-offset:1px;bord
 .chip input:checked+span{background:var(--navy);border-color:var(--navy);color:var(--cream)}
 .chip input:focus-visible+span{outline:2px solid var(--peri);outline-offset:2px}
 .send{padding-bottom:8px}
+.send>.btns{margin-top:0}
+.fallback{margin-top:16px}
+.btn:disabled{opacity:.6;cursor:default}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .btns{display:flex;flex-direction:column;gap:10px;margin-top:12px}
 .btn{appearance:none;display:block;width:100%;text-align:center;font:600 16px/1 Poppins,sans-serif;padding:16px 20px;border-radius:999px;border:1px solid var(--navy);cursor:pointer;text-decoration:none}
 .btn.primary{background:var(--navy);color:var(--cream)}
@@ -127,18 +131,24 @@ footer a{color:var(--ink-2)}
       <input type="text" id="name" name="name" autocomplete="given-name">
     </fieldset>
 
+    <div class="hp" aria-hidden="true"><label for="website">Leave this empty</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
+
     <div class="send">
-      <label class="q">Send it</label>
-      <span class="hint">Email goes to our TasteCircle inbox. Text opens your messages so you can send it to whoever sent you this link.</span>
       <div class="btns">
-        <button class="btn primary" type="button" data-send="email">Send by email</button>
-        <button class="btn ghost" type="button" data-send="text">Send as a text</button>
-        <button class="btn ghost" type="button" data-send="copy">Copy my answers</button>
+        <button class="btn primary" type="button" data-send="post" id="sendBtn">Send my answers</button>
       </div>
       <p class="err" id="err" role="alert"></p>
+      <div class="fallback" id="fallback" hidden>
+        <span class="hint">Or send them another way:</span>
+        <div class="btns">
+          <button class="btn ghost" type="button" data-send="email">Send by email</button>
+          <button class="btn ghost" type="button" data-send="text">Send as a text</button>
+          <button class="btn ghost" type="button" data-send="copy">Copy my answers</button>
+        </div>
+      </div>
       <div class="done" id="done" role="status">
         <h2>Thank you.</h2>
-        <p id="doneMsg">Your email app should be open with your answers in it. Hit send there and it reaches us.</p>
+        <p id="doneMsg">Got it. Your answers are with us.</p>
       </div>
     </div>
   </form>
@@ -149,7 +159,10 @@ footer a{color:var(--ink-2)}
 <script>
 (function(){
   var TO = "tastecirclemain@gmail.com";
+  var HOOK = "https://n8n.srv1748596.hstgr.cloud/webhook/tc-feedback";
   var f = document.getElementById("f");
+  var sendBtn = document.getElementById("sendBtn");
+  var fallback = document.getElementById("fallback");
   var err = document.getElementById("err");
   var done = document.getElementById("done");
   var doneMsg = document.getElementById("doneMsg");
@@ -182,6 +195,34 @@ footer a{color:var(--ink-2)}
     }
     var body = compose();
     var how = b.getAttribute("data-send");
+    if (how === "post") {
+      if (sendBtn.disabled) return;
+      sendBtn.disabled = true; sendBtn.textContent = "Sending…";
+      var data = {
+        add: val("add"), bad: val("bad"), more: val("more"), name: val("name"), website: val("website"),
+        used: (f.querySelector('input[name=used]:checked') || {}).value || "",
+        ideas: Array.prototype.map.call(f.querySelectorAll('input[name=ideas]:checked'), function(i){ return i.value; })
+      };
+      var fail = function(msg){
+        sendBtn.disabled = false; sendBtn.textContent = "Try again";
+        err.textContent = msg || "That didn't go through. Try again, or send your answers another way below.";
+        fallback.hidden = false;
+      };
+      fetch(HOOK, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
+        .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ return { status: r.status, j: j }; }); })
+        .then(function(x){
+          if (x.status === 200 && x.j && x.j.ok) {
+            sendBtn.textContent = "Sent";
+            fallback.hidden = true;
+            show(x.j.duplicate ? "We already have these answers. Thanks again." : "Got it. Your answers are with us.");
+          } else if (x.status === 429) {
+            fail("Too many answers in a short time. Try again later, or send them another way below.");
+          } else {
+            fail();
+          }
+        }, function(){ fail(); });
+      return;
+    }
     if (how === "email") {
       var subj = "TasteCircle feedback" + (val("name") ? " from " + val("name") : "");
       location.href = "mailto:" + TO + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(body);
