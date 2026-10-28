@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Ask Taste Circle: Test and Pricing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&family=DM+Sans:wght@400;600;700&display=swap">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:#0E1526}
+main{max-width:1280px;margin:0 auto;padding:16px;display:flex;flex-direction:column;gap:16px}
+.slide{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:10px;background:#F6F4EE}
+.slide>section{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0}
+td,th{padding:.35em .6em;border-bottom:1px solid #cfcabd;text-align:left;vertical-align:top} th{font-weight:700}
+#guardrails td,#guardrails th,#test td{border-color:#3a4766}
+footer{color:#9AA6BF;font:14px 'DM Sans',Arial,sans-serif;text-align:center;padding:8px 16px 32px}
+</style>
+</head>
+<body>
+<main>
+<div class="slide" aria-label="Slide 1 of 17"><section id="cover" data-transition="fade" style="background:#16213A;color:#F4F1EA;font-family:'DM Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:center;gap:40px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#9DBBFF">TASTE CIRCLE · ASK · OCT 27, 2026</p>
+<h1 style="font-family:'Rubik', Arial, sans-serif;font-size:104px;font-weight:700;line-height:1.05;width:1450px">Ask Taste Circle: a real test, and what to charge</h1>
+<p style="font-size:36px;line-height:1.4;width:1300px;color:#D6DCE8">We ran it on Jaime’s real account with Claude Haiku. Here is how fast it was, how often it was right, what it costs us, and how we could price it now and later.</p>
+<p style="font-size:24px;color:#9DBBFF">For Circle, Nate and Jaime. Nothing is built in the app yet.</p>
+
+</section>
+</div>
+<div class="slide" aria-label="Slide 2 of 17"><section id="what" data-transition="fade" style="background:#F6F4EE;color:#16213A;font-family:'DM Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-size:24px;font-weight:700;letter-spacing:2px;color:#2E5FD9">WHAT ASK IS</p>
+<h2 style="font-family:'Rubik', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.1;width:1500px">Describe a dish. Ask finds it in your own posts.</h2>
+</div>
+<div style="display:flex;gap:32px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFDF8;padding:40px;border:2px solid #DCD8CC;border-radius:20px">
+<p style="font-family:'Rubik', Arial, sans-serif;font-size:56px;font-weight:700;color:#2E5FD9;line-height:1">1</p>
+<h3 style="font-family:'Rubik', Arial, sans-serif;font-size:36px;font-weight:700">You describe it</h3>
+<p style="font-size:28px;line-height:1.4;color:#4A5266">In your own words, like you’d tell a friend. No dates or names needed.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFDF8;padding:40px;border:2px solid #DCD8CC;border-radius:20px">
+<p style="font-family:'Rubik', Arial, sans-serif;font-size:56px;font-weight:700;color:#2E5FD9;line-height:1">2</p>
+<h3 style="font-family:'Rubik', Arial, sans-serif;font-size:36px;font-weight:700">It looks only at your plates</h3>
+<p style="font-size:28px;line-height:1.4;color:#4A5266">Never anyone else’s. It reads the photos too, not just the captions.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFDF8;padding:40px;border:2px solid #DCD8CC;border-radius:20px">
+<p style="font-family:'Rubik', Arial, sans-serif;font-size:56px;font-weight:700;color:#2E5FD9;line-height:1">3</p>
+<h3 style="font-family:'Rubik', Arial, sans-serif;font-size:36px;font-weight:700">It shows you the plates</h3>
+<p style="font-size:28px;line-height:1.4;color:#4A5266">The best match first, then the related ones, each with its date and spot.</p>
+</div>
+</div>
+
+</section>
+</div>
+<div class="slide" aria-label="Slide 3 of 17"><section id="how" data-transition="fade" style="background:#F6F4EE;color:#16213A;font-family:'DM Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-size:24px;font-weight:700;letter-spacing:2px;color:#2E5FD9">HOW IT WORKS</p>
+<h2 style="font-family:'Rubik', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.1">Two steps, both on Claude Haiku</h2>
+</div>
+<div style="display:flex;gap:32px">
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#FFFDF8;padding:48px;border:2px solid #DCD8CC;border-radius:20px">
+<p style="font-size:24px;font-weight:700;letter-spacing:2px;color:#2E5FD9">ONCE PER PHOTO, IN THE BACKGROUND</p>
+<h3 style="font-family:'Rubik', Arial, sans-serif;font-size:44px;font-weight:700">Describe the photo</h3>
+<p style="font-size:28px;line-height:1.45;color:#4A5266">When a plate is posted, Haiku writes a short note: the dish, what’s in it, homemade or restaurant, and where it was eaten. Nobody waits for this.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#16213A;color:#F4F1EA;padding:48px;border-radius:20px">
+<p style="font-size:24px;font-weight:700;letter-spacing:2px;color:#9DBBFF">EACH TIME SOMEONE ASKS</p>
+<h3 style="font-family:'Rubik', Arial, sans-serif;font-size:44px;font-weight:700">Narrow, then pick</h3>
+<p style="font-size:28px;line-height:1.45;color:#D6DCE8">A plain word search cuts your plates to the likely ones, for example only sandwiches. Haiku then reads those notes and picks the matches.</p>
+</div>
+</div>
+
+</section>
+</div>
+<div class="slide" aria-label="Slide 4 of 17"><section id="test" data-transition="fade" style="background:#16213A;color:#F4F1EA;font-family:'DM Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:64px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-size:24px;font-weight:700;letter-spacing:2px;color:#9DBBFF">THE TEST · OCT 27, 2026</p>
+<h2 style="font-family:'Rubik', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.1">We ran Ask on Jaime’s real account</h2>
+</div>
+<div style="display:flex;gap:32px">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;border-top:4px solid #9DBBFF;padding:28px 0 0 0">
+<p style="font-family:'Rubik', Arial, sans-serif;font-size:104px;font-weight:700;line-height:1">511</p>
+<p style="font-size:28px;line-height:1.4;color:#D6DCE8">posts on @jledezma06, the app’s most active account</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;border-top:4px solid #9DBBFF;padding:28px 0 0 0">
+<p style="font-family:'Rubik', Arial, sans-serif;font-size:104px;font-weight:700;line-height:1">8 mo</p>
+<p style="font-size:28px;line-height:1.4;color:#D6DCE8">of plates searched, Feb 27 to Oct 26</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;border-top:4px solid #9DBBFF;padding:28px 0 0 0">
+<p style="font-family:'Rubik', Arial, sans-serif;font-size:104px;font-weight:700;line-height:1">510</p>
+<p style="font-size:28px;line-height:1.4;color:#D6DCE8">photos described by Haiku (1 old photo would not load)</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;border-top:4px solid #9DBBFF;padding:28px 0 0 0">
+<p style="font-family:'Rubik', Arial, sans-serif;font-size:104px;font-weight:700;line-height:1">5</p>
+<p style="font-size:28px;line-height:1.4;color:#D6DCE8">runs of the same question, at different settings</p>
+</div>
+</div>
+<p style="font-size:28px;color:#9DBBFF">Model: Claude Haiku 5.5. Read-only: nothing in the app or database changed. Photos are Jaime’s own.</p>
+
+</section>
+</div>
+<div class="slide" aria-label="Slide 5 of 17"><section id="question" data-transition="fade" style="background:#2E5FD9;color:#F6F4EE;font-family:'DM Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:center;gap:48px">
+<p style="font-size:24px;font-weight:700;letter-spacing:2px;color:#DCE6FF">THE QUESTION WE ASKED</p>
+<p style="font-family:'Rubik', Arial, sans-serif;font-size:64px;font-weight:500;line-height:1.25;width:1600px">“My girlfriend made me this sandwich in the summer. It was kind of chicken, cucumber-ish, and looked really fresh, but I can’t remember when. Pull up all the sandwiches like it from the past 8 months.”</p>
+<p style="font-size:28px;color:#DCE6FF">Lightly tidied from how it was said. No date, no spot, no dish name: just a memory.</p>
+
+</section>
+</div>
+<div class="slide" aria-label="Slide 6 of 17"><section id="best" data-transition="fade" style="background:#F6F4EE;color:#16213A;font-family:'DM Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:row;align-items:center;gap:80px">
+<img src="img/j280.jpg" alt="Jaime’s June 8 sandwich: crispy chicken, cucumber slices and slaw on crusty bread, cucumber slices on the side" style="width:760px;height:760px;object-fit:cover;border-radius:24px">
+<div style="flex:1;display:flex;flex-direction:column;gap:28px">
+<p style="font-size:24px;font-weight:700;letter-spacing:2px;color:#2F7A4A">BEST MATCH, IN ALL 5 RUNS</p>
+<h2 style="font-family:'Rubik', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.1">June 8, 2026</h2>
+<p style="font-size:32px;line-height:1.4;color:#4A5266">Caption: “holy insane yummy Sammy made by Karys”</p>
+<p style="font-size:32px;line-height:1.4;color:#4A5266">From the photo, Haiku saw cucumber slices, a cabbage and carrot slaw and a crispy breaded filling on crusty white bread.</p>
+<p style="font-size:28px;line-height:1.4;background:#FFFDF8;border:2px solid #DCD8CC;border-radius:16px;padding:28px">Haiku: “The closest match is a cucumber sandwich captioned ‘holy insane yummy Sammy made by Karys’ from June 8, 2026, though the protein looks breaded or fried rather than plain chicken.”</p>
+</div>
+
+</section>
+</div>
+<div class="slide" aria-label="Slide 7 of 17"><section id="related" data-transition="fade" style="background:#F6F4EE;color:#16213A;font-family:'DM Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:700;letter-spacing:2px;color:#2E5FD9">AND THE RELATED ONES</p>
+<h2 style="font-family:'Rubik', Arial, sans-serif;font-size:60px;font-weight:700;line-height:1.1">It also pulled the other chicken and cucumber sandwiches</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:28px">
+<div style="display:flex;flex-direction:column;gap:8px"><img src="img/j425.jpg" alt="Homemade chicken salad and cucumber sandwich" style="width:395px;height:196px;object-fit:cover;border-radius:14px"><p style="font-size:24px;font-weight:700">Chicken salad + cucumber</p><p style="font-size:24px;color:#4A5266">Apr 8 · homemade</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><img src="img/j424.jpg" alt="Same sandwich, thicker slice, open-faced with cucumber" style="width:395px;height:196px;object-fit:cover;border-radius:14px"><p style="font-size:24px;font-weight:700">Same one, thicker slice</p><p style="font-size:24px;color:#4A5266">Apr 8 · homemade</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><img src="img/j270.jpg" alt="Store-bought pesto chicken croissant in a plastic box in a car" style="width:395px;height:196px;object-fit:cover;border-radius:14px"><p style="font-size:24px;font-weight:700">Pesto chicken croissant</p><p style="font-size:24px;color:#4A5266">Jun 12 · store-bought</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><img src="img/j215.jpg" alt="Grilled chicken sandwich eaten in a car" style="width:395px;height:196px;object-fit:cover;border-radius:14px"><p style="font-size:24px;font-weight:700">Grilled chicken</p><p style="font-size:24px;color:#4A5266">Jul 9 · in the car</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><img src="img/j431.jpg" alt="Chicken Parisien sandwich with Caesar salad" style="width:395px;height:196px;object-fit:cover;border-radius:14px"><p style="font-size:24px;font-weight:700">Chicken Parisien</p><p style="font-size:24px;color:#4A5266">Apr 5 · La Madeleine</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><img src="img/j341.jpg" alt="Turkey sandwich with cucumber and avocado and chips" style="width:395px;height:196px;object-fit:cover;border-radius:14px"><p style="font-size:24px;font-weight:700">Turkey, cucumber, avocado</p><p style="font-size:24px;color:#4A5266">May 17</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><img src="img/j415.jpg" alt="Turkey or chicken sandwich with arugula held in a car" style="width:395px;height:196px;object-fit:cover;border-radius:14px"><p style="font-size:24px;font-weight:700">Turkey or chicken, arugula</p><p style="font-size:24px;color:#4A5266">Apr 15</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><img src="img/j391.jpg" alt="Two lunch sandwiches at a restaurant table" style="width:395px;height:196px;object-fit:cover;border-radius:14px"><p style="font-size:24px;font-weight:700">Two lunch sandwiches</p><p style="font-size:24px;color:#4A5266">Apr 24 · restaurant</p></div>
+</div>
+
+</section>
+</div>
+<div class="slide" aria-label="Slide 8 of 17"><section id="speed" data-transition="fade" style="background:#F6F4EE;color:#16213A;font-family:'DM Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-size:24px;font-weight:700;letter-spacing:2px;color:#2E5FD9">SPEED</p>
+<h2 style="font-family:'Rubik', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.1">Seconds, not minutes</h2>
+</div>
+<div style="display:flex;gap:32px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFDF8;padding:44px;border:2px solid #DCD8CC;border-radius:20px">
+<p style="font-family:'Rubik', Arial, sans-serif;font-size:96px;font-weight:700;line-height:1;color:#2E5FD9">1.5 s</p>
+<h3 style="font-family:'Rubik', Arial, sans-serif;font-size:32px;font-weight:700">To describe one photo</h3>
+<p style="font-size:26px;line-height:1.4;color:#4A5266">Done once, in the background. All 510 took 110 seconds, 8 at a time.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFDF8;padding:44px;border:2px solid #DCD8CC;border-radius:20px">
+<p style="font-family:'Rubik', Arial, sans-serif;font-size:96px;font-weight:700;line-height:1;color:#2E5FD9">4–8 s</p>
+<h3 style="font-family:'Rubik', Arial, sans-serif;font-size:32px;font-weight:700">Fast answer</h3>
+<p style="font-size:26px;line-height:1.4;color:#4A5266">Right top pick, but a short list of related sandwiches.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#16213A;color:#F4F1EA;padding:44px;border-radius:20px">
+<p style="font-family:'Rubik', Arial, sans-serif;font-size:96px;font-weight:700;line-height:1;color:#9DBBFF">13 s</p>
+<h3 style="font-family:'Rubik', Arial, sans-serif;font-size:32px;font-weight:700">Thorough answer</h3>
+<p style="font-size:26px;line-height:1.4;color:#D6DCE8">Right top pick and every related sandwich. The one to ship.</p>
+</div>
+</div>
+<p style="font-size:28px;line-height:1.4;color:#4A5266;width:1600px"><b>Making the wait feel short:</b> show the best match the moment it’s found, then fill in the related plates a few seconds later.</p>
+
+</section>
+</div>
+<div class="slide" aria-label="Slide 9 of 17"><section id="accuracy" data-transition="fade" style="background:#F6F4EE;color:#16213A;font-family:'DM Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-size:24px;font-weight:700;letter-spacing:2px;color:#2E5FD9">ACCURACY</p>
+<h2 style="font-family:'Rubik', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.1">Checked by hand against all 510 photos</h2>
+</div>
+<table style="font-size:32px;color:#16213A;width:1664px">
+<tr><th style="width:38%;text-align:left">What we checked</th><th style="width:22%;text-align:left">Result</th><th style="width:40%;text-align:left">Detail</th></tr>
+<tr><td>The top pick</td><td style="color:#2F7A4A">Right, 5 of 5 runs</td><td>June 8 “made by Karys” first every time</td></tr>
+<tr><td>Haiku’s photo notes</td><td style="color:#2F7A4A">Accurate</td><td>Every sandwich note we spot-checked matched its photo</td></tr>
+<tr><td>Related list, thorough setting</td><td style="color:#2F7A4A">Complete</td><td>All ~29 chicken or cucumber sandwiches</td></tr>
+<tr><td>Related list, fast setting</td><td style="color:#A23B2E">Too short</td><td>Only 2 to 6 of them</td></tr>
+<tr><td>Mistakes</td><td style="color:#A23B2E">2 small ones</td><td>A no-chicken sandwich in its top 3; said it couldn’t confirm a date it had</td></tr>
+</table>
+
+</section>
+</div>
+<div class="slide" aria-label="Slide 10 of 17"><section id="percall" data-transition="fade" style="background:#F6F4EE;color:#16213A;font-family:'DM Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-size:24px;font-weight:700;letter-spacing:2px;color:#2E5FD9">COST PER CALL</p>
+<h2 style="font-family:'Rubik', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.1">A question costs about a quarter of a cent</h2>
+</div>
+<table style="font-size:32px;color:#16213A;width:1664px">
+<tr><th style="width:44%;text-align:left">Call</th><th style="width:18%;text-align:right">Tokens in</th><th style="width:18%;text-align:right">Tokens out</th><th style="width:20%;text-align:right">Cost</th></tr>
+<tr><td>Sandwich question, thorough</td><td style="text-align:right">15,858</td><td style="text-align:right">2,627</td><td style="text-align:right"><b>$0.0029</b></td></tr>
+<tr><td>Same, thorough at lower effort</td><td style="text-align:right">15,858</td><td style="text-align:right">1,070</td><td style="text-align:right">$0.0021</td></tr>
+<tr><td>Same, fast (all 510 notes)</td><td style="text-align:right">82,895</td><td style="text-align:right">679</td><td style="text-align:right">$0.0086</td></tr>
+<tr><td>Describe one photo, once</td><td style="text-align:right">~790</td><td style="text-align:right">~155</td><td style="text-align:right"><b>$0.00016</b></td></tr>
+</table>
+<p style="font-size:28px;line-height:1.4;color:#4A5266;width:1600px">About 345 questions per dollar. All 510 of Jaime’s photos cost 8 cents to describe. Haiku 5.5 list prices: $0.10 per million tokens in, $0.50 out.</p>
+
+</section>
+</div>
+<div class="slide" aria-label="Slide 11 of 17"><section id="peruser" data-transition="fade" style="background:#F6F4EE;color:#16213A;font-family:'DM Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-size:24px;font-weight:700;letter-spacing:2px;color:#2E5FD9">COST PER USER</p>
+<h2 style="font-family:'Rubik', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.1">Even a heavy user costs 13 cents a month</h2>
+</div>
+<table style="font-size:32px;color:#16213A;width:1664px">
+<tr><th style="width:40%;text-align:left">User</th><th style="width:20%;text-align:right">Posts / month</th><th style="width:20%;text-align:right">Questions</th><th style="width:20%;text-align:right">Cost / month</th></tr>
+<tr><td>Light</td><td style="text-align:right">5</td><td style="text-align:right">3</td><td style="text-align:right"><b>$0.01</b></td></tr>
+<tr><td>Typical</td><td style="text-align:right">15</td><td style="text-align:right">10</td><td style="text-align:right"><b>$0.04</b></td></tr>
+<tr><td>Heavy, like Jaime</td><td style="text-align:right">64</td><td style="text-align:right">30</td><td style="text-align:right"><b>$0.13</b></td></tr>
+<tr style="background:#F1E4E1"><td>Someone abusing it</td><td style="text-align:right">64</td><td style="text-align:right">300</td><td style="text-align:right"><b>$1.21</b> (why we cap)</td></tr>
+</table>
+<p style="font-size:28px;line-height:1.4;color:#4A5266;width:1600px">Costs padded 25% for Firebase and retries: $0.004 a question, $0.0002 a photo. Describing all 10,333 photos in the app today: about $2, once.</p>
+
+</section>
+</div>
+<div class="slide" aria-label="Slide 12 of 17"><section id="free" data-transition="fade" style="background:#F6F4EE;color:#16213A;font-family:'DM Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:44px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-size:24px;font-weight:700;letter-spacing:2px;color:#2E5FD9">OPTION A · FREE FOR EVERYONE</p>
+<h2 style="font-family:'Rubik', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.1">Free, with a monthly question cap</h2>
+</div>
+<div style="display:flex;gap:48px;align-items:start">
+<table style="font-size:32px;color:#16213A;width:1000px">
+<tr><th style="width:34%;text-align:left">Monthly users</th><th style="width:33%;text-align:right">Realistic cost</th><th style="width:33%;text-align:right">If all max out</th></tr>
+<tr><td>65 (today)</td><td style="text-align:right"><b>$3</b></td><td style="text-align:right">$8</td></tr>
+<tr><td>1,000</td><td style="text-align:right"><b>$40</b></td><td style="text-align:right">$130</td></tr>
+<tr><td>10,000</td><td style="text-align:right"><b>$400</b></td><td style="text-align:right">$1,300</td></tr>
+</table>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#16213A;color:#F4F1EA;padding:40px;border-radius:20px">
+<p style="font-size:24px;font-weight:700;letter-spacing:2px;color:#9DBBFF">WHO PAYS</p>
+<p style="font-family:'Rubik', Arial, sans-serif;font-size:40px;font-weight:700;line-height:1.2">Restaurants</p>
+<p style="font-size:26px;line-height:1.4;color:#D6DCE8">One Spot Plus at $79 a month covers about 1,800 typical users. One Spot Pro at $199 covers about 4,600.</p>
+</div>
+</div>
+<p style="font-size:28px;line-height:1.4;color:#4A5266;width:1600px">With a 30-question cap, no one user can cost more than 13 cents a month. Keeps the rule that Taste Circle’s money comes from businesses, not students.</p>
+
+</section>
+</div>
+<div class="slide" aria-label="Slide 13 of 17"><section id="paid" data-transition="fade" style="background:#F6F4EE;color:#16213A;font-family:'DM Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:44px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-size:24px;font-weight:700;letter-spacing:2px;color:#2E5FD9">OPTION B · FREE PLUS A PAID TIER</p>
+<h2 style="font-family:'Rubik', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.1">Taste Circle+ at $3.99 a month</h2>
+</div>
+<div style="display:flex;gap:32px">
+<div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#FFFDF8;padding:40px;border:2px solid #DCD8CC;border-radius:20px">
+<p style="font-size:24px;font-weight:700;letter-spacing:2px;color:#4A5266">FREE</p>
+<p style="font-family:'Rubik', Arial, sans-serif;font-size:44px;font-weight:700">10 questions a month</p>
+<p style="font-size:26px;line-height:1.4;color:#4A5266">Costs us at most about 5 cents a user.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#16213A;color:#F4F1EA;padding:40px;border-radius:20px">
+<p style="font-size:24px;font-weight:700;letter-spacing:2px;color:#9DBBFF">TASTE CIRCLE+</p>
+<p style="font-family:'Rubik', Arial, sans-serif;font-size:44px;font-weight:700">Unlimited Ask</p>
+<p style="font-size:26px;line-height:1.4;color:#D6DCE8">Fair use 300 a month, plus the paid row of the season pass and exclusive stickers.</p>
+</div>
+</div>
+<table style="font-size:28px;color:#16213A;width:1664px">
+<tr><th style="width:50%;text-align:left">Per subscriber, per month</th><th style="width:25%;text-align:right">Typical (30 questions)</th><th style="width:25%;text-align:right">Worst case (300)</th></tr>
+<tr><td>$3.99 minus Apple’s 15%</td><td style="text-align:right">$3.39</td><td style="text-align:right">$3.39</td></tr>
+<tr><td>Our AI cost</td><td style="text-align:right">$0.13</td><td style="text-align:right">$1.21</td></tr>
+<tr><td><b>Margin</b></td><td style="text-align:right;color:#2F7A4A"><b>96%</b></td><td style="text-align:right;color:#2F7A4A"><b>64%</b></td></tr>
+</table>
+
+</section>
+</div>
+<div class="slide" aria-label="Slide 14 of 17"><section id="profit" data-transition="fade" style="background:#F6F4EE;color:#16213A;font-family:'DM Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-size:24px;font-weight:700;letter-spacing:2px;color:#2E5FD9">OPTION B · AT SCALE</p>
+<h2 style="font-family:'Rubik', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.1">It only becomes real money with more users</h2>
+</div>
+<table style="font-size:32px;color:#16213A;width:1664px">
+<tr><th style="width:24%;text-align:left">Monthly users</th><th style="width:19%;text-align:right">Subscribers</th><th style="width:19%;text-align:right">Revenue</th><th style="width:19%;text-align:right">AI cost</th><th style="width:19%;text-align:right">Profit / month</th></tr>
+<tr><td>65 (today)</td><td style="text-align:right">3</td><td style="text-align:right">$10</td><td style="text-align:right">$3</td><td style="text-align:right"><b>$7</b></td></tr>
+<tr><td>1,000</td><td style="text-align:right">50</td><td style="text-align:right">$170</td><td style="text-align:right">$50</td><td style="text-align:right"><b>$120</b></td></tr>
+<tr><td>10,000</td><td style="text-align:right">500</td><td style="text-align:right">$1,695</td><td style="text-align:right">$490</td><td style="text-align:right"><b>$1,200</b></td></tr>
+<tr style="background:#E3ECFB"><td>25,000</td><td style="text-align:right">1,250</td><td style="text-align:right">$4,240</td><td style="text-align:right">$1,230</td><td style="text-align:right"><b>$3,000</b></td></tr>
+</table>
+<p style="font-size:28px;line-height:1.4;color:#4A5266;width:1600px">Assumes 5% of users subscribe; similar apps typically see 2 to 6%. A yearly plan at $29.99 would bring cash in up front and keep people longer.</p>
+
+</section>
+</div>
+<div class="slide" aria-label="Slide 15 of 17"><section id="future" data-transition="fade" style="background:#F6F4EE;color:#16213A;font-family:'DM Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-size:24px;font-weight:700;letter-spacing:2px;color:#2E5FD9">THE PLAN · NOW AND LATER</p>
+<h2 style="font-family:'Rubik', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.1">Free first, paid once the numbers say so</h2>
+</div>
+<div style="display:flex;gap:0px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;border-top:6px solid #2E5FD9;padding:32px 32px 0 0">
+<p style="font-size:24px;font-weight:700;letter-spacing:2px;color:#2E5FD9">NOW</p>
+<h3 style="font-family:'Rubik', Arial, sans-serif;font-size:34px;font-weight:700;line-height:1.2">Launch free, 20 questions a month</h3>
+<p style="font-size:26px;line-height:1.4;color:#4A5266">Worst case 9 cents a user. A $50 monthly spending limit, Discord alert at 80%.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;border-top:6px solid #7FA0E8;padding:32px 32px 0 0">
+<p style="font-size:24px;font-weight:700;letter-spacing:2px;color:#2E5FD9">FIRST 60 DAYS</p>
+<h3 style="font-family:'Rubik', Arial, sans-serif;font-size:34px;font-weight:700;line-height:1.2">Measure real use</h3>
+<p style="font-size:26px;line-height:1.4;color:#4A5266">Questions per user, who hits the cap, which questions repeat.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;border-top:6px solid #B5C7F0;padding:32px 32px 0 0">
+<p style="font-size:24px;font-weight:700;letter-spacing:2px;color:#2E5FD9">AT ~1,000 USERS</p>
+<h3 style="font-family:'Rubik', Arial, sans-serif;font-size:34px;font-weight:700;line-height:1.2">Add Taste Circle+</h3>
+<p style="font-size:26px;line-height:1.4;color:#4A5266">$3.99 a month or $29.99 a year, priced on the real numbers.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;border-top:6px solid #DCD8CC;padding:32px 0 0 0">
+<p style="font-size:24px;font-weight:700;letter-spacing:2px;color:#2E5FD9">ALONGSIDE</p>
+<h3 style="font-family:'Rubik', Arial, sans-serif;font-size:34px;font-weight:700;line-height:1.2">Restaurants inside answers</h3>
+<p style="font-size:26px;line-height:1.4;color:#4A5266">When Ask finds a partner spot’s plate, show its deal: $1 per redemption.</p>
+</div>
+</div>
+
+</section>
+</div>
+<div class="slide" aria-label="Slide 16 of 17"><section id="guardrails" data-transition="fade" style="background:#16213A;color:#F4F1EA;font-family:'DM Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-size:24px;font-weight:700;letter-spacing:2px;color:#9DBBFF">BEFORE IT GOES LIVE</p>
+<h2 style="font-family:'Rubik', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.1">Five guardrails</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:28px">
+<div style="display:flex;flex-direction:column;gap:10px;border-left:4px solid #9DBBFF;padding:4px 0 4px 28px"><h3 style="font-family:'Rubik', Arial, sans-serif;font-size:32px;font-weight:700">Opt-in first</h3><p style="font-size:26px;line-height:1.4;color:#D6DCE8">Apple requires asking before photos go to an AI company, naming it (Anthropic).</p></div>
+<div style="display:flex;flex-direction:column;gap:10px;border-left:4px solid #9DBBFF;padding:4px 0 4px 28px"><h3 style="font-family:'Rubik', Arial, sans-serif;font-size:32px;font-weight:700">Claude only</h3><p style="font-size:26px;line-height:1.4;color:#D6DCE8">Google’s terms bar its AI models in apps likely used by under-18s. We’re rated 13+.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px;border-left:4px solid #9DBBFF;padding:4px 0 4px 28px"><h3 style="font-family:'Rubik', Arial, sans-serif;font-size:32px;font-weight:700">Your plates only</h3><p style="font-size:26px;line-height:1.4;color:#D6DCE8">The server takes who’s asking from their login, so nobody can search someone else.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px;border-left:4px solid #9DBBFF;padding:4px 0 4px 28px"><h3 style="font-family:'Rubik', Arial, sans-serif;font-size:32px;font-weight:700">A spending limit</h3><p style="font-size:26px;line-height:1.4;color:#D6DCE8">A monthly cap per user and on the account, with a Discord alert.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px;border-left:4px solid #E8A9A0;padding:4px 0 4px 28px"><h3 style="font-family:'Rubik', Arial, sans-serif;font-size:32px;font-weight:700">The “students never pay” rule</h3><p style="font-size:26px;line-height:1.4;color:#D6DCE8">Taste Circle+ breaks it. The team has to decide to change it before we sell anything.</p></div>
+</div>
+
+</section>
+</div>
+<div class="slide" aria-label="Slide 17 of 17"><section id="decide" data-transition="fade" style="background:#F6F4EE;color:#16213A;font-family:'DM Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-size:24px;font-weight:700;letter-spacing:2px;color:#2E5FD9">WHAT WE NEED TO DECIDE</p>
+<h2 style="font-family:'Rubik', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.1">Four decisions</h2>
+</div>
+<table style="font-size:32px;color:#16213A;width:1664px">
+<tr><th style="width:50%;text-align:left">Decision</th><th style="width:50%;text-align:left">Recommendation</th></tr>
+<tr><td>Build Ask and launch it free?</td><td>Yes, 20 questions a month, thorough setting</td></tr>
+<tr><td>Add Taste Circle+ later?</td><td>Yes, at about 1,000 monthly users</td></tr>
+<tr><td>Change “students never pay” for it?</td><td>Team call; needed before any paid tier</td></tr>
+<tr><td>Whose Anthropic account pays?</td><td>The LLC’s, with a $50 monthly limit to start</td></tr>
+</table>
+
+</section>
+</div>
+</main>
+<footer>Taste Circle · internal team deck · Oct 27, 2026</footer>
+<script>
+function fit(){document.querySelectorAll('.slide').forEach(function(s){s.firstElementChild.style.transform='scale('+(s.clientWidth/1920)+')';});}
+window.addEventListener('resize',fit);fit();
+</script>
+</body>
+</html>
